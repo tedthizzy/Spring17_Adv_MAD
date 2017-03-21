@@ -2,7 +2,7 @@
 //  MasterViewController.swift
 //  petitions
 //
-//  Created by Aileen Pierce on 2/29/16.
+//  Created by Aileen Pierce
 //  Copyright © 2016 Aileen Pierce. All rights reserved.
 //
 
