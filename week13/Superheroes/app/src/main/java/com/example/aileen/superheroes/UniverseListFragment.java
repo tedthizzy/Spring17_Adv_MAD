@@ -40,7 +40,7 @@ public class UniverseListFragment extends Fragment implements AdapterView.OnItem
             //get the list view
             ListView listUniverse = (ListView) view.findViewById(R.id.listView);
             //define an array adapter
-            ArrayAdapter<Hero> listAdapter = new ArrayAdapter<Hero>(getContext(), android.R.layout.simple_list_item_1, Hero.heroes);
+            ArrayAdapter<Hero> listAdapter = new ArrayAdapter<Hero>(getActivity(), android.R.layout.simple_list_item_1, Hero.heroes);
             //set the array adapter on the list view
             listUniverse.setAdapter(listAdapter);
 
