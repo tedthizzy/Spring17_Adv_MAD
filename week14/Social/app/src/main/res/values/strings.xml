@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Social</string>
+    <string name="email_hint">Enter email address</string>
+    <string name="button_title">Search</string>
+</resources>
