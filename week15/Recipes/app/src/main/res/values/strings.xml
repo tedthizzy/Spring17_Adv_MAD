@@ -4,5 +4,6 @@
     <string name="add_recipe_name">Recipe name</string>
     <string name="add_recipe_url">http://</string>
     <string name="adddialog_title">Add Recipe</string>
+    <string name="add_recipe_toast">Please enter a recipe name</string>
 
 </resources>

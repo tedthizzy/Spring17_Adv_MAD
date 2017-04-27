@@ -1,6 +1,7 @@
 package com.example.aileen.recipes;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -66,15 +68,24 @@ public class RecipeMainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         String recipeName = nameEditText.getText().toString();
                         String recipeURL = urlEditText.getText().toString();
-                        //create new recipe item
-                        RecipeItem newRecipe = new RecipeItem(recipeName, recipeURL);
-                        //add to the array list
-                        recipes.add(newRecipe);
-                        //refresh the list view
-                        listAdapter.notifyDataSetChanged();
-                        //add to Firebase
-                        ref.child(recipeName).setValue(newRecipe);
-                        dialog.dismiss();
+                        if (recipeName.trim().length() > 0) {
+                            //create new recipe item
+                            RecipeItem newRecipe = new RecipeItem(recipeName, recipeURL);
+                            //add to the array list
+                            recipes.add(newRecipe);
+                            //refresh the list view
+                            listAdapter.notifyDataSetChanged();
+                            //add to Firebase
+                            ref.child(recipeName).setValue(newRecipe);
+                            dialog.dismiss();
+                        } else {
+                            Context context = getApplicationContext();
+                            CharSequence text = getString(R.string.add_recipe_toast);
+                            int duration = Toast.LENGTH_SHORT;
+
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                        }
                     }
                 });
                 dialog.show();
